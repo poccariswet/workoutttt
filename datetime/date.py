@@ -1,4 +1,10 @@
 from datetime import datetime, timedelta
+import boto3
+
+s3 = boto3.resource('s3')
+BUCKET_NAME = 'nichiji-tmp'
+OBJECT_KEY_NAME = 'nichiji.txt'
+obj = s3.Object(BUCKET_NAME,OBJECT_KEY_NAME)
 
 start = datetime.strptime('20161115', '%Y%m%d')
 end = datetime.strptime('20170101', '%Y%m%d')
